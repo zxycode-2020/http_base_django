@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>投票详情页</title>
+</head>
+<body>
+<h1>{{ question.question_text }}</h1>
+<form action="{% url 'vote' question.id %}" method="post">
+
+        {% for choice in question.choice_set.all %} <!--反向查询，用过一个question获取question下的所有choice-->
+            <input type="radio" value="{{ choice.id }}" name="cid">{{ choice.choice_text }}<br>
+        {% endfor %}
+        <input type="submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends 'stumanage/base.html' %}
+
+{% block main %}
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>成绩</th>
+            <th>邮箱</th>
+            <th>班级</th>
+            <th>管理</th>
+        </tr>
+        {% for stu in stus %}
+        <tr>
+            <td>{{ stu.name }}</td>
+            <td>{{ stu.age }}</td>
+            <td>
+                {% if stu.score %}
+                    {{ stu.score }}
+                {% else %}
+                    挂科了
+                {% endif %}
+            </td>
+            <td>{{ stu.email }}</td>
+            <td>{{ stu.cls.name }}</td>
+            <td>
+                <a href="{% url 'stu_del' %}?sid={{ stu.id }}" onclick="return confirm('真的删除吗？');">删除</a>
+                <a href="">修改</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

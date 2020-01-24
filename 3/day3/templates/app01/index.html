@@ -1,0 +1,63 @@
+{% load static %}
+{% load mytags %}
+{% load myfilters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'app01/css/common.css' %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'app01/js/common.js' %}"></script>
+</head>
+<body>
+{{ title }}
+<hr>
+{{ content }}
+<hr>
+{% if language %}
+    {% for item in language %}
+        {{ item }}
+    {% endfor %}
+{% else %}
+    没有语言
+{% endif %}
+<hr>
+{{ language.0 }}
+<hr>
+{% for key,value in info.items %}
+    {{ key }}--{{ value | upper | lower }} <!--模板过滤器连用，先转成大写，再转成小写-->
+{% endfor %}
+<hr>
+{{ h1.name | upper }}---{{ h1.age }}
+{{ h1.sayhello }}
+<hr>
+{{ time | date:'Y-m-d' }}
+<hr>
+{% for item in citys %}
+    {% for province,city in item.items %}
+        ----{{ province }}----<br>
+        {% for cy in city %}
+            {{ cy }}<br>
+        {% endfor %}
+    {% endfor %}
+{% endfor %}
+<hr>
+{% ifequal a b %}
+    相等
+{% else %}
+    不相等
+{% endifequal %}
+<hr>
+{#{{ link|truncatewords:"4" }}#}
+{#{{ link|truncatechars:"10" }}#}
+{{ link | length}} <!-字符串长度-->
+<hr>
+{{ link | slice:'3:10' }}
+<hr>
+{% tag1 1 2 %}
+{% nowtime %}
+<hr>
+{{ link | filter1 }}
+<img src="{% static 'app01/image/1.jpg' %}">
+</body>
+</html>

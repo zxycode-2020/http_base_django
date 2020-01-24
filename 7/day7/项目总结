@@ -1,0 +1,55 @@
+1 . 模板
+    模板变量
+        {{ 变量名 }}
+        {% if %}
+        {% endif %}
+        {% for %}
+        {% endfor %}
+        模板过滤器
+            date
+            slice
+            tuncatechars
+            cuncatewords
+            lower
+            upper
+            safe
+               '''
+                whie 1:
+                    alert(1)
+               '''
+                {{ link | safe }}
+        继承
+        包含
+        静态文件加载
+        自定义过滤器和标签
+
+2.列表的增删改查
+
+3.列表的模糊查询
+
+4.列表的排序
+
+5.列表的分页
+
+6.高级检索
+
+7.django 内置用户 登陆 退出 注册
+    一对多
+    ForeginKey （关系型数据库 mysql oracle sqlserver ）
+                非关系型数据库 memcache mongodb redis
+    多对多
+    ManyToMany
+
+    一对一
+    用户扩展信息 OnetoOne
+
+8 文件上传，头像
+    文件在本地
+        表单加一个属性
+             enctype="multipart/form-data"
+    文件要提交到服务器
+        文件大小
+        文件类型
+            image/jpg image/gif
+            把文件存储到服务器的某个位置
+

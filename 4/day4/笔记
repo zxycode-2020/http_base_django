@@ -1,0 +1,30 @@
+模型: ORM ->  python类 和 数据库中表的映射关系
+    创建模型
+        字符型
+        整形
+        浮点
+        日期
+        外键
+
+        给数据表配置 ： 内部类
+            配置表名
+            class Meta:
+                verbose_name = verbose_name_plural =  '学生'
+        对象别名：在数据模型内部定义函数
+            python2
+            def __unicode__
+                return var
+            python3
+            def __str__
+                return var
+        给字段起别名：字段类型里边的参数  verbose_name='学生姓名'
+
+    注册数据模型到django-admin
+        import models
+        admin.site.register(models.Student) # 注册数据模型到django admin后台
+
+    同步数据库
+        python manage.py makemigrations
+        python manage.py migrate
+
+    基本的增删改查

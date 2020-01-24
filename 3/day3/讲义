@@ -1,0 +1,66 @@
+模板
+    渲染模板
+        1.render
+        2.Template Context
+        3.模板标签
+            if
+            ifequal
+            for
+            单变量
+            标签嵌套
+            对象
+        4.过滤器
+            date
+            lower
+            upper
+            truncatewords
+            truncatechars
+            slice
+
+        5.自定义模板标签
+            0.在seetings installapps下加入你的app
+            1.在相应app下建立包templatetags
+            2.在这个包下建立一个py脚本
+                from django import template
+                register = template.Library() # 实例化register对象  注册模板标签用的
+
+                @register.simple_tag
+                def foo()
+                    pass
+            3.{% load mytags %}
+            4.{% foo %}
+        6.自定义模板过滤器
+            0.在seetings installapps下加入你的app
+            1.在相应app下建立包templatetags
+            2.在这个包下建立一个py脚本
+                from django import template
+                register = template.Library() # 实例化register对象  注册模板标签用的
+
+                @register.filter
+                def foo()
+                    pass
+            3.{{ varname | filtername }}
+            4.{% foo %}
+        7.静态资源：针对动态资源而说的，直接把资源发给用户
+
+        8.继承和包含
+            继承
+            1   先写一个base基模板
+            2   其他模板继承base
+            3   重写block
+            包含
+            1.单独写一段html
+            2.要包含的地方用 {% include 模板名 %}
+
+
+模型：ORM  对象关系映射
+    class article:
+        id = int
+        title = char
+        content = text
+
+    makemigrations
+    migrate
+
+    select * from student
+    Article.objects.all()

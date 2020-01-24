@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% block css %} {% endblock %}
+</head>
+<body>
+<div class="head">
+    {% include 'app02/banner.html' %}
+</div>
+{% block main %}
+    我是主要内容
+{% endblock %}
+<div class="foot"></div>
+
+{% block js %}
+{% endblock %}
+</body>
+</html>
